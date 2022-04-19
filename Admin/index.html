@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Administrador de Ideal</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo_ideal.png">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="../assets/img/logo_ideal.png" alt=""> </b>
+                    <span class="brand-title">
+                        <center>
+                        <h1 style="color: white;">IDEAL</h1>
+                    </center>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Buscar" aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Buscar">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="images/user/form-user.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href=""><i class="icon-user"></i> <span>Perfil</span></a>
+                                        </li>
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Bloquear Pantalla</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Cerrar Sesión</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Tablero</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Principal</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./../index.html">Inicio</a></li>
+                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-label">Alumnos</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i> <span class="nav-text">Control Escolar</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Alta</a></li>
+                            <li><a href="">Bajas</a></li>
+                            <li><a href="">Por Matricular</a></li>
+                            <li><a href="">Cardex</a></li>
+                            <li><a href="">Plan de Estudio</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i> <span class="nav-text">Titulaciones</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Carta Termino</a></li>
+                            <li><a href="">Carta Pasante</a></li>
+                            <li><a href="">Titulos</a></li>
+                            <li><a href="">Cardex</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">CERTIFICACIONES</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Secundaria y Preparatoria</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Certificación</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="form-step.html">Secundaria</a></li>
+                                    <li><a href="form-stepPRE.html">Preparatoria</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Listas</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="">Lista General</a></li>
+                                    <li><a href="">Lista 2</a></li>
+                                    <li><a href="">Lista 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Preparatoria 2 años</a></li>
+                            <li><a href="">Preparatoria 3 años</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Finanzas</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i><span class="nav-text">Alumnos</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Historial de Pagos</a></li>
+                    </li>
+                    </ul>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i><span class="nav-text">Escuelas</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Historial de Pagos por Carrera</a></li>
+                    </li>
+                    </ul>
+                    <ul aria-expanded="false">
+                        <li><a href="">Historial de Pagos General</a></li>
+                        </li>
+                    </ul>
+                    <ul aria-expanded="false">
+                        <li><a href="controlM.html">Control de Pagos</a></li>
+                        </li>
+                    </ul>
+                    <ul aria-expanded="false">
+                        <li><a href="listaAbierta.html">Lista Abierta</a></li>
+                        </li>
+                    </ul>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i><span class="nav-text">Titulaciones</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Cobranza Ideal</a></li>
+                    </li>
+                    </ul>
+                    <ul aria-expanded="false">
+                        <li><a href="">Estadistica Total Ideal</a></li>
+                        </li>
+                    </ul>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i><span class="nav-text">Certificadoras</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Control de Pagos Mensual</a></li>
+                    </li>
+                    </ul>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i><span class="nav-text">Control de Pagos</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Mensual</a></li>
+                    </li>
+                    </ul>
+
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="">
+                            <div class="card gradient-1">
+                                <div class="card-body">
+                                    <center>
+                                        <h3 class="card-title text-white">Mensualidades</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="">
+                            <div class="card gradient-2">
+                                <div class="card-body">
+                                    <center>
+                                        <h3 class="card-title text-white">Preparatoria</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="">
+                            <div class="card gradient-3">
+                                <div class="card-body">
+                                    <center>
+                                        <h3 class="card-title text-white">Secundaria</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="">
+                            <div class="card gradient-4">
+                                <div class="card-body">
+                                    <center>
+                                        <h3 class="card-title text-white">Licenciatura</h3>
+                                    </center>
+                                </div>
+                            </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+                <h1>Listas por Escuelas</h1>
+            </center>
+            <br>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">UCAP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">GALILEA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CSOM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">GALILEA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CSOM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CEUMA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HARVARD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TEQ MEX</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BAUHAUS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">UDECH</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">METROPOLITANO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CESVAN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">COMEPZ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">UEEM</a>
+                </li>
+            </ul>
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>Calendario</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mt-5">
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-block"><i class="ti-plus f-s-12 m-r-5"></i>Agregar Nuevo</a>
+                                    <div id="external-events" class="m-t-20">
+                                        <div class="external-event bg-primary text-white" data-class="bg-primary"><i class="fa fa-move"></i>Importante</div>
+                                        <div class="external-event bg-success text-white" data-class="bg-success"><i class="fa fa-move"></i>Urgente</div>
+                                        <div class="external-event bg-warning text-white" data-class="bg-warning"><i class="fa fa-move"></i>Pendiente</div>
+                                        <div class="external-event bg-dark text-white" data-class="bg-dark"><i class="fa fa-move"></i>Recordatorio</div>
+                                    </div>
+                                    <!-- checkbox -->
+                                    <!--   <div class="checkbox m-t-40">
+                                        <input id="drop-remove" type="checkbox">
+                                        <label for="drop-remove">Remove after drop</label>
+                                    </div> -->
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-box m-b-50">
+                                        <div id="calendar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- end col -->
+                                <!-- BEGIN MODAL -->
+                                <div class="modal fade none-border" id="event-modal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title"><strong>Agrega un nuevo evento</strong></h4>
+                                            </div>
+                                            <div class="modal-body"></div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear Evento</button>
+                                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Add Category -->
+                                <!-- <div class="modal fade none-border" id="add-category">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title"><strong>Agrega</strong></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label class="control-label">Category Name</label>
+                                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="control-label">Choose Category Color</label>
+                                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                                                <option value="success">Success</option>
+                                                                <option value="danger">Danger</option>
+                                                                <option value="info">Info</option>
+                                                                <option value="pink">Pink</option>
+                                                                <option value="primary">Primary</option>
+                                                                <option value="warning">Warning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- END MODAL -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-0">
+                            <h4 class="card-title px-4 mb-3">Pendientes</h4>
+                            <div class="todo-list">
+                                <div class="tdl-holder">
+                                    <div class="tdl-content">
+                                        <ul id="todo_list">
+                                            <li><label><input type="checkbox"><i></i><span>Prueba</span><a href='#' class="ti-trash"></a></label></li>
+                                            <li><label><input type="checkbox" checked><i></i><span>Prueba 2</span><a href='#' class="ti-trash"></a></label></li>
+                                            <li><label><input type="checkbox"><i></i><span>Prueba 3</span><a href='#' class="ti-trash"></a></label></li>
+                                            <li><label><input type="checkbox" checked><i></i><span>Prueba 4</span><a href='#' class="ti-trash"></a></label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="px-4">
+                                        <input type="text" class="tdl-new form-control" placeholder="Nuevo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <center>
+            <div class="container ">
+                <div class="copyright ">
+                    <strong><span>CORPORATIVO IDEAL - ÉXITO: PASIÓN DE VIDA</span></strong>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+
+    <script src="./plugins/jqueryui/js/jquery-ui.min.js"></script>
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/fullcalendar/js/fullcalendar.min.js"></script>
+    <script src="./js/plugins-init/fullcalendar-init.js"></script>
+
+</body>
+
+</html>
